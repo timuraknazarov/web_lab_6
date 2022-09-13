@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Users/rocke/Documents/TSU/web/web_lab_6/lab6css.css">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <div id="buttonbox">
+            <div class="btn" id="btnleft">Левая колонка</div>
+            <div class="btn" id="btnmid">Обе две</div>
+            <div class="btn" id="btnright">Правая колонка</div>
+        </div>
+        <div id="imagesbox">
+            <div id="cat"><img src="/Users/rocke/Documents/TSU/web/web_lab_6/cat.jpg" alt=""></div>
+            <div id="dog"><img src="/Users/rocke/Documents/TSU/web/web_lab_6/dog.jpg" alt=""></div>
+        </div>
+    </main>
+
+
+</body>
+<script>
+    var catbox = document.getElementById('cat');
+    var dogbox = document.getElementById('dog')
+    document.getElementById('btnleft').onclick = function (e){
+        catbox.style.flexGrow = 1;
+        dogbox.style.flex = 0;
+        catbox.firstElementChild.style.width = '600px';
+        catbox.firstElementChild.style.height = '350px';
+        catbox.style.justifyContent = 'left'
+        catbox.firstElementChild.style.display = 'unset';
+        dogbox.firstElementChild.style.display = 'none';    
+    }
+    document.getElementById('btnmid').onclick = function (e){
+        catbox.style.flexGrow = 1;
+        dogbox.style.flexGrow = 1;
+        
+        catbox.firstElementChild.style.width = '400px';
+        catbox.firstElementChild.style.height = '350px';
+        
+        dogbox.firstElementChild.style.width = '400px';
+        dogbox.firstElementChild.style.height = '350px';
+        
+        catbox.style.justifyContent = 'center'
+        dogbox.style.justifyContent = 'center'
+
+        catbox.firstElementChild.style.display = 'unset'; 
+        dogbox.firstElementChild.style.display = 'unset';
+
+    }   
+    document.getElementById('btnright').onclick = function (e){
+        dogbox.style.flexGrow = 1;
+        catbox.style.flex = 0;
+        dogbox.firstElementChild.style.width = '600px';
+        dogbox.firstElementChild.style.height = '350px';
+        dogbox.style.justifyContent = 'left'
+        catbox.firstElementChild.style.display = 'none';
+        dogbox.firstElementChild.style.display = 'unset';
+    }
+</script>
+</html>
